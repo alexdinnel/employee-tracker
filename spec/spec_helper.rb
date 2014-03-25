@@ -12,6 +12,8 @@ ActiveRecord::Base.establish_connection(test_configuration)
 
 RSpec.configure do |config|
   config.after(:each) do
-    Division.all.each { |task| task.destroy }
+    Division.all.each { |division| division.destroy }
+    Employee.all.each { |employee| employee.destroy }
+    Project.all.each { |project| project.destroy }
   end
 end
